@@ -244,7 +244,7 @@ VALUES
 
   select * from userinfo order by salary desc;
 
-## For finding a specific vale of a specific collunm from a specific table  
+## For finding a specific vale of a specific collumn from a specific table  
 
 * Syntax
 
@@ -367,4 +367,6 @@ which will be common between two tables only that will be accessable
 
 ***Note***:
 
-cross join ar dan side a je table ta thakbe oi table ar protita 
+cross join ar bam side ar table ar ak ak ta row dan side ar tabel ar sob gulo row ar sathe relation generate kore jemon prothom 1st table ar 1st row 2nd table ar sobar sathe abar 1st table ar 2nd row 2nd table ar sob sobar sathe relation generate kore. jodi amar akta table a 5 ta rows thake abong onno table a 6 ta rows thake tahole ai 2ta table a jodi ami cross join kori tahole total rows hobe 5*6=30 ta. cross join ke  beshi use kora hoy na. 
+
+cross join amra tokhon ee bebohar kori jokhon amader emon dhoroner data ante hobe jekhane 2 ta table aksathe data niye ashbe abong protita table onno table ar sathe akta multiple relation generate korbe tokhon.
