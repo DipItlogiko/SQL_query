@@ -165,15 +165,206 @@ VALUES
 
   alter table userinfo drop column position;
 
-
-## For deleting any row from a table
+##  For sum a specific collumn of a specific table
+    you can  addition of a specific collumn value 
 
 * Syntax
 
-  delete from table_name where id= id_number;
+  select sum(collumn_name)from table_name;
 
 * Example
 
-  delete from userinfo where id=2; 
+  select sum(salary)from userinfo;
 
-##   
+##  For avrage a specific collumn of a specific table  
+
+* Syntax
+
+  select avg(collumn_name) from table_name;
+
+* Example
+
+  select avg(salary) from userinfo;
+
+##  For counting total number of raws of a specific table
+
+* Syntax
+
+  select count(collumn_name) from table_name;
+
+* Example
+
+  select count(id) from userinfo;
+ 
+## For find out a maximum value of a specific collumn from a specific table
+
+* Syntax
+
+  select max(collumn_name) from table_name;
+
+* Example
+
+  select max(salary) from userinfo;
+
+## For find out a minimum value of a specific collumn from a specific table
+
+* Syntax
+
+  select min(collumn_name) from table_name;
+
+* Example
+
+  select min(salary) from userinfo;
+
+## For assending and descending our collumn value we can use order by
+
+### 1.assending  
+
+  it will show lower to higher format 
+
+* Syntax
+
+  select * from table_name order by collumn_name;
+
+* Example
+
+  select * from userinfo order by salary;
+
+  Note: it will show assending format bydefault
+
+### 2.descending
+
+  it will show higher to lower format
+
+* Syntax
+
+  select * from table_name order by collumn_name desc;
+
+* Example
+
+  select * from userinfo order by salary desc;
+
+## For finding a specific vale of a specific collunm from a specific table  
+
+* Syntax
+
+  select * from table_name where collumn_name like 'starting_letter%'
+
+* Example
+
+  select * from userinfo where name like 'd%' ;
+
+  Note: it will find my userinfo table name field valu and it will also  chack which value start with d  . it's not case-sensitive and % means it will access many alphabets and '_%' or '%_' colled whiled card
+
+### Or
+
+  if you want to chack by specific collunm values last letter
+
+* Syntax
+
+  select * from table_name where collumn_name like '%Ending_letter';
+
+
+* Example
+
+  select * from userinfo where name like '%a';
+
+  Note: it will find my userinfo table name field valu and it will also  chack which value End with a  . it's not case-sensitive
+
+### Or
+
+  if you want to chack by specific collunm values Second letter
+
+* Syntax
+
+  select * from table_name where collumn_name like '_Second letter%';
+
+
+* Example
+
+  select * from userinfo where name like '_n%';
+
+  Note: it will find my userinfo table name field valu and it will also  chack Second value with n  . it's not case-sensitive
+   
+
+### Or
+
+  if you want to chack by specific collunm values Second last letter
+
+* Syntax
+
+  select * from table_name where collumn_name like '%Second letter_';
+
+
+* Example
+
+  select * from userinfo where name like '%n_';
+
+  Note: it will find my userinfo table name field valu and it will also  chack Second last value with n  . it's not case-sensitive
+
+
+
+## Join  
+
+ we need two tables
+
+### Inner join
+
+which will be common between two tables only that will be accessable
+
+- Syntax
+  
+  select * from table1_name inner join table2_name on table1_common_field = table2_common_field;
+
+- Example
+
+  select * from userinfo inner join employe on userinfo.id = togetheremploye.id;
+
+  ***Note*** : 
+  
+  So here i have used both table id collumn to join two table and id collumn is common in both table. if id number is same in two tables then I will only be able to see thoes id's all records. In this way we can join 2 tables together
+
+
+
+### Left join
+
+- Syntax
+
+  select * from table1_name left join table2_name on table1_common_field = table2_common_field 
+
+- Example
+
+  select * from userinfo left join employe on userinfo.id = togetheremploye.id;  
+  
+  ***Note***:
+
+  left join ar bam pashe je table ta thakbe she table ar sob element ashbe kintu left join ar dan pashe je table ta thakbe oita jodi bam pasher table ar sahte match na kore tahoe null value return korbe
+### Right join
+
+- Syntax
+
+  select * from table1_name right join table2_name on table1_common_field = table2_common_field 
+
+- Example  
+
+  select * from userinfo right join employe on userinfo.id = employe.id
+
+  ***Note***:
+
+  right join ar dan pashe je table ta thakbe she table ar sob element ashbe kintu right join ar bam pashe je table ta thakbe oita jodi dan pasher table ar sahte match na kore tahoe null value return korbe
+
+### Cross join
+
+  in Cross join no need to write any condition
+
+- Syntax
+
+  select * from table1_name cross join table2_name;
+
+- Example
+
+  select * from userinfo cross join ;
+
+***Note***:
+
+cross join ar dan side a je table ta thakbe oi table ar protita 
